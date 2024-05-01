@@ -7,6 +7,8 @@ function main_order() {
 	document.getElementById("delivery_select").style.width = document.getElementById("location_select").clientWidth + 4 + "px";
 }
 
+let previousDeliveryPrice = 0;
+let previousPlacePrize = 0;
 let currentPrice = 0;
 let products = [];
 let index = 0;
@@ -76,7 +78,8 @@ function add_product() {
 function change_place() {
 	if (document.getElementById("location_select").value != "N") {
 		place = document.getElementById("location_select").value;
-		currentPrice += pricesForPlace[document.getElementById("location_select").value]
+		currentPrice += pricesForPlace[document.getElementById("location_select").value] - previousPlacePrize;
+		previousPlacePrize = pricesForPlace[document.getElementById("location_select").value];
 		updateCode();
 	}
 }
@@ -84,7 +87,8 @@ function change_place() {
 function change_delivery() {
 	if (document.getElementById("delivery_select").value != "N") {
 		delivery = document.getElementById("delivery_select").value;
-		currentPrice += pricesForDevilery[document.getElementById("delivery_select").value]
+		currentPrice += pricesForDevilery[document.getElementById("delivery_select").value] - previousDeliveryPrice;
+		previousDeliveryPrice = pricesForDevilery[document.getElementById("delivery_select").value]
 		updateCode();
 	}
 }
