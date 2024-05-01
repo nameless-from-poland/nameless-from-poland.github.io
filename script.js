@@ -48,7 +48,7 @@ function updateCode() {
 			code += "_" + products[i];
 		}
 	}
-	document.getElementById("price_and_code").innerHTML = "Cena zamówienia: " + currentPrice + "zł (miejsce odbioru: " + pricesForPlace[place] + " zł, tryb dostawy: " + pricesForDevilery[delivery] + " zł, łączna cena produktów: " + (currentPrice - pricesForPlace[place] - pricesForDevilery[delivery]) + " zł)</br>Kod zamówienia: " + code;
+	document.getElementById("price_and_code").innerHTML = "Cena zamówienia: " + currentPrice + "zł (miejsce odbioru: " + pricesForPlace[place] + " zł, czas dostawy: " + pricesForDevilery[delivery] + " zł, łączna cena produktów: " + (currentPrice - pricesForPlace[place] - pricesForDevilery[delivery]) + " zł)</br>Kod zamówienia: " + code;
 }
 
 function remove_item(productIndex, elementId) {
